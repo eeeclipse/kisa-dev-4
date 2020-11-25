@@ -1,3 +1,5 @@
+/* 매장정보 */
+
 .main_text {
   font-size: x-large;
   color: #000;
@@ -11,6 +13,12 @@
 
 .test {
   text-align: right;
+}
+
+.subscribe-position {
+  width: 60%;
+  margin: auto;
+
 }
 
 
@@ -28,6 +36,42 @@
 #slide_show>ul>li {
   display: inline-block;
   font-size: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.slider {
+  width: 50%;
+  margin: 100px auto;
+}
+
+.slick-slide {
+  margin: 0px 20px;
+}
+
+.slick-slide img {
+  width: 100%;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+
+
+.slick-slide {
+  transition: all ease-in-out .3s;
+  opacity: .2;
+}
+
+.slick-active {
+  opacity: .5;
+}
+
+.slick-current {
+  opacity: 1;
 }
 
 
@@ -101,4 +145,109 @@
   margin-top: 5%;
   display: inline-block;
   background: #000;
+}
+
+
+
+/* 로그인 로그아웃 */
+
+.logoutBtn {
+  visibility: hidden;
+}
+
+
+/* 모달 */
+.modal-wrapper-addWorker {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.25s ease-in-out;
+}
+
+.modal-wrapper-addWorker.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal_head {
+  width: 100%;
+  height: 60px;
+  padding: 12px 30px;
+  overflow: hidden;
+  background: #8ca0f7;
+}
+
+.modal-wrapper-addWorker .modal {
+  width: 600px;
+  height: 400px;
+  display: block;
+  margin: 50% 0 0 -300px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.modal-wrapper-addWorker.open .modal {
+  margin-top: -200px;
+  opacity: 1;
+}
+
+.btn-close-addWorker {
+  font-size: 25px;
+  display: block;
+  float: right;
+  color: rgb(255, 255, 255)255, 255, 255);
+}
+
+.content-addWorker {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.content-receive {
+  padding-top: 10px;
+}
+
+
+
+
+/* 관심작가 */
+#myfvworker {
+  text-align: center;
+  padding-top: 10px;
+  font-family: "Nanum Gothic", sans-serif;
+  height: 150px;
+  overflow: auto;
+}
+
+#goShop {
+  width: 150px;
+  height: 30%;
+  flex: 1 1 auto;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  border: 0;
+  outline: 0;
+  background-image: linear-gradient(to right, #8ca0f7 0%, #74a9f9 19%, #86b0fd 60%, #8bc6fe 100%);
+}
+
+
+#goShop:hover {
+  background-position: right center;
+  /* change the direction of the change here */
 }

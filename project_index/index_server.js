@@ -2,6 +2,7 @@ const express = require('express')
 
 const app = express()
 
+var shopname = "";
 
 // 랜더링할 파일이 있는 디렉토리
 app.set('views', __dirname + '/views');
@@ -14,6 +15,13 @@ app.use(express.static(__dirname + '/public'));
 app.get('/', function(req, res){
     res.render('index');
 });
+
+app.get('/shop', function(req, res){
+    shopname = req.query.shopname;
+    res.render('shop');
+});
+
+
 app.listen(3000, function () {
 	console.log('server on!');
 });

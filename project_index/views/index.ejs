@@ -17,51 +17,21 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/index.css">
 
-  <style type="text/css">
-    * {
-      box-sizing: border-box;
-    }
-
-    .slider {
-        width: 50%;
-        margin: 100px auto;
-    }
-
-    .slick-slide {
-      margin: 0px 20px;
-    }
-
-    .slick-slide img {
-      width: 100%;
-    }
-
-    .slick-prev:before,
-    .slick-next:before {
-      color: black;
-    }
-
-
-    .slick-slide {
-      transition: all ease-in-out .3s;
-      opacity: .2;
-    }
-
-    .slick-active {
-      opacity: .5;
-    }
-
-    .slick-current {
-      opacity: 1;
-    }
-  </style>
-
+  <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
+  <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="vendors/skrollr.min.js"></script>
+  <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+  <script src="vendors/nice-select/jquery.nice-select.min.js"></script>
+  <script src="vendors/jquery.ajaxchimp.min.js"></script>
+  <script src="vendors/mail-script.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+  <script src="vendors/slick/slick.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/index.js"></script>
 
 </head>
 <body>
 
   <!--================ 헤더 메뉴 =================-->
-
-
   <header class="header_area">
     <div class="header">
         <div class="menu_btn">
@@ -87,7 +57,7 @@
           
         </div>
           <ul class="menu_wrap">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="/index">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="주문내역조회.html">주문내역조회</a></li>
             <li class="nav-item"><a class="nav-link" href="전자영수증.html">전자영수증</a></li>
             <li class="nav-item"><a class="nav-link" href="공지사항.html">공지사항</a></li>
@@ -95,7 +65,8 @@
             <li class="nav-item"><a class="nav-link" href="자주하는질문.html">자주하는질문</a></li>
             <li class="nav-item"><a class="nav-link" href="설정.html">설정</a></li>
             <br>
-            <a class="button button-header text-center" href="#">Sign In</a>
+            <a class="button button-header text-center singinBtn" href="/login">Sign In</a>
+            <a class="button button-header text-center logoutBtn" href="/index">Logout</a>
             <br>
             <br>
           </ul>
@@ -135,7 +106,7 @@
                 <th>거리</th>
               </tr>
             </thead>
-            <tbody id="table_body">
+            <tbody class="table_body_fre">
                 <tr>
                   <td>가게이름1</td>
                   <td>위치1</td>
@@ -155,7 +126,7 @@
   <!-- ================ 가까운 매장 ================= -->
   <section class="subscribe-position">
     <div class="container">
-      <div class="subscribe">
+      <div class="subscribe text-center">
         <div class ="text-center">
           <text class="main_text"> 가까운 매장</text>
           <div class="test">
@@ -171,17 +142,11 @@
                   <th>위치</th>
                 </tr>
               </thead>
-              <tbody id="table_body">
+              <tbody class="table_body_near">
                   <tr>
-                    <td>가게이름1</td>
+                    <td>가게이름2</td>
                     <td>위치1</td>
                   </tr>
-
-                  <!--
-                  나중에 데이터 추가는
-                  $('#table_body').append('<tr><td>' + nickname + '</td><td>' + review + '</td><td><text class = "delete_btn" id="delete' + review_idx + '"> 삭제 </text></td></tr>')
-                  이런식으로
-                  -->
               </tbody>
           </table>
         </div>
@@ -194,16 +159,33 @@
   <br>
   <br>
 
-  <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
-  <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
-  <script src="vendors/skrollr.min.js"></script>
-  <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
-  <script src="vendors/nice-select/jquery.nice-select.min.js"></script>
-  <script src="vendors/jquery.ajaxchimp.min.js"></script>
-  <script src="vendors/mail-script.js"></script>
-  <script src="js/main.js"></script>
-  <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
-  <script src="vendors/slick/slick.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- 가게 정보 Modal -->
+	<div class="modal-wrapper-addWorker">
+		<div class="modal">
+      <div class="modal_head">
+        <a class="btn-close-addWorker trigger">
+        <i class="fa fa-times" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="content-addWorker">
+          <div class="content-worker">
+            <br>
+            <div class="modal_shopname">
+
+            </div>
+          </div>
+          
+          <div>
+            <br>
+            <br>
+            <button id="goShop">쇼핑하기</button>
+          </div>
+          
+      </div>
+		</div>
+	</div>
+
 
   <script type="text/javascript">
     $(document).on('ready', function() {
@@ -276,7 +258,9 @@
                 right: '-' + 50 + '%'
                         });
         });
+
     });
+
 </script>
 
 </body>
