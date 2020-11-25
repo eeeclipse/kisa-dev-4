@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Slick Playground</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="vendors/slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="vendors/slick/slick-theme.css">
+  <title>메인페이지</title>
+  <link rel="icon" href="img/Fevicon.png" type="image/png">
+  <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="vendors/themify-icons/themify-icons.css">
+  <link rel="stylesheet" href="vendors/nice-select/nice-select.css">
+  <link rel="stylesheet" href="vendors/owl-carousel/owl.theme.default.min.css">
+  <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index.css">
+
+  <style type="text/css">
+    * {
+      box-sizing: border-box;
+    }
+
+    .slider {
+        width: 50%;
+        margin: 100px auto;
+    }
+
+    .slick-slide {
+      margin: 0px 20px;
+    }
+
+    .slick-slide img {
+      width: 100%;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+      color: black;
+    }
+
+
+    .slick-slide {
+      transition: all ease-in-out .3s;
+      opacity: .2;
+    }
+
+    .slick-active {
+      opacity: .5;
+    }
+
+    .slick-current {
+      opacity: 1;
+    }
+  </style>
+
+
+</head>
+<body>
+
+  <!--================ 헤더 메뉴 =================-->
+
+
+  <header class="header_area">
+    <div class="header">
+        <div class="menu_btn">
+          
+          <a href="#">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjQgNmgtMjR2LTRoMjR2NHptMCA0aC0yNHY0aDI0di00em0wIDhoLTI0djRoMjR2LTR6Ii8+PC9zdmc+">
+          </a>
+        </div>
+    </div>
+    <div class="menu_bg">
+      
+    </div>
+    <div class="sidebar_menu">
+         <div class="close_btn"><a href="#">
+             <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjMuOTU0IDIxLjAzbC05LjE4NC05LjA5NSA5LjA5Mi05LjE3NC0yLjgzMi0yLjgwNy05LjA5IDkuMTc5LTkuMTc2LTkuMDg4LTIuODEgMi44MSA5LjE4NiA5LjEwNS05LjA5NSA5LjE4NCAyLjgxIDIuODEgOS4xMTItOS4xOTIgOS4xOCA5LjF6Ii8+PC9zdmc+">
+             </a>
+         </div>
+         <div class="menu_coupon text-center">
+           <br>
+          <h6 class="text-center">마이페이지</h6>
+           <div class="menu_coupon_div">
+           </div>
+          
+        </div>
+          <ul class="menu_wrap">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="주문내역조회.html">주문내역조회</a></li>
+            <li class="nav-item"><a class="nav-link" href="전자영수증.html">전자영수증</a></li>
+            <li class="nav-item"><a class="nav-link" href="공지사항.html">공지사항</a></li>
+            <li class="nav-item"><a class="nav-link" href="이용안내.html">이용안내</a></li>
+            <li class="nav-item"><a class="nav-link" href="자주하는질문.html">자주하는질문</a></li>
+            <li class="nav-item"><a class="nav-link" href="설정.html">설정</a></li>
+            <br>
+            <a class="button button-header text-center" href="#">Sign In</a>
+            <br>
+            <br>
+          </ul>
+      </div>
+    </div>
+  </header>
+  <!--================ End Header Menu Area =================-->
+
+
+  <!--================ 슬라이드쇼 =================-->
+  <section class="lazy slider">
+    <div>
+      <img src="img/blog/blog1.png" alt="">
+    </div>
+    <div>
+      <img src="img/blog/blog2.png" alt="">
+    </div>
+    <div>
+      <img src="img/blog/blog3.png" alt="">
+    </div>
+  </section>
+
+
+  <!-- ================ 자주 가는 매장 ================= -->
+  <section class="subscribe-position">
+    <div class="container">
+      <div class="subscribe text-center">
+        <text class="main_text">자주 가는 매장</text>
+        <br>
+        <br>
+        <div id="mc_embed_signup">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>가게 이름</th>
+                <th>위치</th>
+                <th>거리</th>
+              </tr>
+            </thead>
+            <tbody id="table_body">
+                <tr>
+                  <td>가게이름1</td>
+                  <td>위치1</td>
+                  <td>2.0km</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+<br>
+<br>
+
+  <!-- ================ 가까운 매장 ================= -->
+  <section class="subscribe-position">
+    <div class="container">
+      <div class="subscribe">
+        <div class ="text-center">
+          <text class="main_text"> 가까운 매장</text>
+          <div class="test">
+            <text class="test">현재 위치에서 2.0km </text>
+          </div>
+        </div>
+        <br>
+        <div id="mc_embed_signup">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>가게 이름</th>
+                  <th>위치</th>
+                </tr>
+              </thead>
+              <tbody id="table_body">
+                  <tr>
+                    <td>가게이름1</td>
+                    <td>위치1</td>
+                  </tr>
+
+                  <!--
+                  나중에 데이터 추가는
+                  $('#table_body').append('<tr><td>' + nickname + '</td><td>' + review + '</td><td><text class = "delete_btn" id="delete' + review_idx + '"> 삭제 </text></td></tr>')
+                  이런식으로
+                  -->
+              </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ================ Subscribe section end ================= -->
+
+  <br>
+  <br>
+
+  <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
+  <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="vendors/skrollr.min.js"></script>
+  <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+  <script src="vendors/nice-select/jquery.nice-select.min.js"></script>
+  <script src="vendors/jquery.ajaxchimp.min.js"></script>
+  <script src="vendors/mail-script.js"></script>
+  <script src="js/main.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+  <script src="vendors/slick/slick.js" type="text/javascript" charset="utf-8"></script>
+
+  <script type="text/javascript">
+    $(document).on('ready', function() {
+      $(".vertical-center-4").slick({
+        dots: true,
+        vertical: true,
+        centerMode: true,
+        slidesToShow: 4,
+        slidesToScroll: 2
+      });
+      $(".vertical-center-3").slick({
+        dots: true,
+        vertical: true,
+        centerMode: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+      });
+      $(".vertical-center-2").slick({
+        dots: true,
+        vertical: true,
+        centerMode: true,
+        slidesToShow: 2,
+        slidesToScroll: 2
+      });
+      $(".vertical-center").slick({
+        dots: true,
+        vertical: true,
+        centerMode: true,
+      });
+      $(".vertical").slick({
+        dots: true,
+        vertical: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+      });
+      $(".regular").slick({
+        dots: true,
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+      });
+      $(".center").slick({
+        dots: true,
+        infinite: true,
+        centerMode: true,
+        slidesToShow: 5,
+        slidesToScroll: 3
+      });
+      $(".variable").slick({
+        dots: true,
+        infinite: true,
+        variableWidth: true
+      });
+      $(".lazy").slick({
+        lazyLoad: 'ondemand', // ondemand progressive anticipated
+        infinite: true
+      });
+
+
+      // 햄버거바
+      $('.menu_btn>a').on('click', function(){
+            $('.menu_bg').show();
+            $('.sidebar_menu').animate({
+                right:0
+            });
+        });
+        $('.close_btn>a').on('click', function(){
+            $('.menu_bg').hide();
+            $('.sidebar_menu').animate({
+                right: '-' + 50 + '%'
+                        });
+        });
+    });
+</script>
+
+</body>
+</html>

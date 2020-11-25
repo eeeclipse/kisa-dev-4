@@ -1,0 +1,104 @@
+.main_text {
+  font-size: x-large;
+  color: #000;
+}
+
+.shop_distance_text {
+  font-size: small;
+  color: #000;
+  text-align: right;
+}
+
+.test {
+  text-align: right;
+}
+
+
+/* 슬라이드쇼 */
+#slide_show {
+  width: auto;
+  height: auto;
+  overflow: hidden;
+}
+
+#slide_show>ul {
+  font-size: 0;
+}
+
+#slide_show>ul>li {
+  display: inline-block;
+  font-size: 0;
+}
+
+
+/* 햄버거바 */
+
+.header {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+
+.menu_btn {
+  text-align: right;
+  padding: 10px;
+}
+
+.menu_bg {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  display: none;
+}
+
+.sidebar_menu {
+  width: 30%;
+  height: 50%;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  right: -50%;
+
+}
+
+.close_btn {
+  width: 25px;
+  height: 25px;
+  margin: 10px;
+}
+
+.close_btn>a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.menu_wrap {
+  list-style: none;
+  background: #fff;
+}
+
+.menu_wrap li a {
+  color: #000;
+  text-decoration: none;
+}
+
+.menu_wrap li a:hover {
+  color: rgb(118, 130, 240);
+  text-decoration: none;
+}
+
+.menu_coupon {
+  width: 100%;
+  background: #fff;
+}
+
+.menu_coupon_div {
+  width: 50%;
+  height: 100px;
+  margin-top: 5%;
+  display: inline-block;
+  background: #000;
+}
