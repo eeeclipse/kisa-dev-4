@@ -16,11 +16,19 @@ app.get('/', function(req, res){
     res.render('index');
 });
 
+app.get('/index', function(req, res){
+    res.render('index');
+});
+
 app.get('/shop', function(req, res){
     shopname = req.query.shopname;
+    console.log(shopname);
     res.render('shop');
 });
 
+app.get('/payment', function(req, res){
+    res.render('payment');
+});
 
 app.listen(3000, function () {
 	console.log('server on!');

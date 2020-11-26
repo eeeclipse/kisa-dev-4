@@ -78,16 +78,26 @@
 
 
   <!--================ qr 창 =================-->
-  <section class="text-center" style="margin-top: 50px;">
+  <section id = "qrcode" class="text-center" style="margin-top: 50px;">
     <video id="preview"></video>
-    <p>상품의 QR코드 또는 바코드를 입력해주세요</p>
+    <p>계산대의 QR코드를 인식해주세요</p>
   </section>
       
+  <section class="result text-center">
+
+  </section>
   
+  <section class="go_home text-center">
+    <a class="button button-header text-center singinBtn" href="/index">홈으로 이동</a>
+  </section>
   
 
   <script type="text/javascript" src="js/instascan.min.js"></script>
   <script type="text/javascript">
+    
+    $('.result').empty();
+    $('.go_home').hide();
+
       // qr코드
       let scanner = new Instascan.Scanner({
         video: document.getElementById("preview"),
@@ -95,8 +105,26 @@
       scanner.addListener('scan', function (content) {
         console.log(content);
         
-        // qr에서 데이터 받음
-        $("#largePopup").show();
+        if(confirm("상품을 배송해드릴까요?")){
+            let today = new Date();  
+            let year = today.getFullYear(); // 년도
+            let month = today.getMonth() + 1;  // 월
+            let date = today.getDate();  // 날짜
+            let day = today.getDay();  // 요일
+
+            $('#qrcode').empty();
+            $('.result').append("<p>결제정보</p>");
+            $('.result').append("<p>매장명 : </p>");
+            $('.result').append("<p>영수증번호 :</p>");
+            $('.result').append("<p>결제일시 : " + year + "-" + month + "-" + date + "</p>");
+            $('.go_home').show();
+            console.log(year);
+
+        } else{
+            alert("취소");
+        }
+
+        
 
       });
       Instascan.Camera.getCameras().then(function (cameras) {
