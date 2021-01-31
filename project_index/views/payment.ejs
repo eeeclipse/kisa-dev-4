@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Slick Playground</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="vendors/slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="vendors/slick/slick-theme.css">
+  <title>메인페이지</title>
+  <link rel="icon" href="img/Fevicon.png" type="image/png">
+  <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="vendors/themify-icons/themify-icons.css">
+  <link rel="stylesheet" href="vendors/nice-select/nice-select.css">
+  <link rel="stylesheet" href="vendors/owl-carousel/owl.theme.default.min.css">
+  <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index.css">
+
+  <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
+  <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="vendors/skrollr.min.js"></script>
+  <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+  <script src="vendors/nice-select/jquery.nice-select.min.js"></script>
+  <script src="vendors/jquery.ajaxchimp.min.js"></script>
+  <script src="vendors/mail-script.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+  <script src="vendors/slick/slick.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/index.js"></script>
+  
+
+</head>
+<body>
+
+  <!--================ 헤더 메뉴 =================-->
+  <header class="header_area">
+    <div class="header">
+        <div class="menu_btn">
+          
+          <a href="#">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjQgNmgtMjR2LTRoMjR2NHptMCA0aC0yNHY0aDI0di00em0wIDhoLTI0djRoMjR2LTR6Ii8+PC9zdmc+">
+          </a>
+        </div>
+    </div>
+    <div class="menu_bg">
+      
+    </div>
+    <div class="sidebar_menu">
+         <div class="close_btn"><a href="#">
+             <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjMuOTU0IDIxLjAzbC05LjE4NC05LjA5NSA5LjA5Mi05LjE3NC0yLjgzMi0yLjgwNy05LjA5IDkuMTc5LTkuMTc2LTkuMDg4LTIuODEgMi44MSA5LjE4NiA5LjEwNS05LjA5NSA5LjE4NCAyLjgxIDIuODEgOS4xMTItOS4xOTIgOS4xOCA5LjF6Ii8+PC9zdmc+">
+             </a>
+         </div>
+         <div class="menu_coupon text-center">
+           <br>
+          <h6 class="text-center">마이페이지</h6>
+           <div class="menu_coupon_div">
+           </div>
+          
+        </div>
+          <ul class="menu_wrap">
+            <li class="nav-item"><a class="nav-link" href="/index">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="주문내역조회.html">주문내역조회</a></li>
+            <li class="nav-item"><a class="nav-link" href="전자영수증.html">전자영수증</a></li>
+            <li class="nav-item"><a class="nav-link" href="공지사항.html">공지사항</a></li>
+            <li class="nav-item"><a class="nav-link" href="이용안내.html">이용안내</a></li>
+            <li class="nav-item"><a class="nav-link" href="자주하는질문.html">자주하는질문</a></li>
+            <li class="nav-item"><a class="nav-link" href="설정.html">설정</a></li>
+            <br>
+            <a class="button button-header text-center singinBtn" href="/login">Sign In</a>
+            <a class="button button-header text-center logoutBtn" href="/index">Logout</a>
+            <br>
+            <br>
+          </ul>
+      </div>
+    </div>
+  </header>
+  <!--================ End Header Menu Area =================-->
+
+
+  <!--================ qr 창 =================-->
+  <section id = "qrcode" class="text-center" style="margin-top: 50px;">
+    <video id="preview"></video>
+    <p>계산대의 QR코드를 인식해주세요</p>
+  </section>
+      
+  <section class="result text-center">
+
+  </section>
+  
+  <section class="go_home text-center">
+    <a class="button button-header text-center singinBtn" href="/index">홈으로 이동</a>
+  </section>
+  
+
+  <script type="text/javascript" src="js/instascan.min.js"></script>
+  <script type="text/javascript">
+    
+    $('.result').empty();
+    $('.go_home').hide();
+
+      // qr코드
+      let scanner = new Instascan.Scanner({
+        video: document.getElementById("preview"),
+      });
+      scanner.addListener('scan', function (content) {
+        console.log(content);
+        
+        if(confirm("상품을 배송해드릴까요?")){
+            let today = new Date();  
+            let year = today.getFullYear(); // 년도
+            let month = today.getMonth() + 1;  // 월
+            let date = today.getDate();  // 날짜
+            let day = today.getDay();  // 요일
+
+            $('#qrcode').empty();
+            $('.result').append("<p>결제정보</p>");
+            $('.result').append("<p>매장명 : </p>");
+            $('.result').append("<p>영수증번호 :</p>");
+            $('.result').append("<p>결제일시 : " + year + "-" + month + "-" + date + "</p>");
+            $('.go_home').show();
+            console.log(year);
+
+        } else{
+            alert("취소");
+        }
+
+        
+
+      });
+      Instascan.Camera.getCameras().then(function (cameras) {
+        if (cameras.length > 0) {
+          scanner.start(cameras[0]);
+        } else {
+          console.error('No cameras found.');
+        }
+      }).catch(function (e) {
+        console.error(e);
+      });
+
+
+
+      // 햄버거바
+      $('.menu_btn>a').on('click', function(){
+            $('.menu_bg').show();
+            $('.sidebar_menu').animate({
+                right:0
+            });
+        });
+        $('.close_btn>a').on('click', function(){
+            $('.menu_bg').hide();
+            $('.sidebar_menu').animate({
+                right: '-' + 50 + '%'
+                        });
+        });
+
+
+</script>
+
+</body>
+</html>
